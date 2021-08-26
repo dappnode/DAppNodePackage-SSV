@@ -1,0 +1,9 @@
+db:
+  Path: /data/db
+eth2:
+  Network:
+  BeaconNodeAddr:
+eth1:
+  ETH1Addr: 
+  RegistryContractAddr: 
+OperatorPrivateKey:

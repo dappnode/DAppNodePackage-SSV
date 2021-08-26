@@ -1,0 +1,31 @@
+{
+  "name": "ssv-prater.dnp.dappnode.eth",
+  "version": "0.1.0",
+  "upstreamVersion": "v0.0.15",
+  "upstreamRepo": "bloxapp/ssv",
+  "upstreamArg": "UPSTREAM_VERSION",
+  "shortDescription": "Secret Shared Validator Prater Testnet",
+  "description": "SSV.network is a decentralized ETH staking network enabling the distributed operation of an Ethereum validator. The network allows both users and operators to diversify staking risks, optimize performance, and promote decentralization across the Ethereum consensus layer.",
+  "type": "service",
+  "author": "DAppNode Association <admin@dappnode.io> (https://github.com/dappnode)",
+  "contributors": [
+    "Eduardo Antuña <edu@dappnode.io> (https://github.com/eduadiez)"
+  ],
+  "categories": ["Blockchain", "ETH2.0"],
+  "license": "GLP-3.0",
+  "links": {
+    "explorer": "https://explorer.ssv.network/",
+    "homepage": "https://ssv.network/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dappnode/DAppNodePackage-SSV.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dappnode/DAppNodePackage-SSV/issues"
+  },
+  "dependencies": {
+    "goerli-geth.dnp.dappnode.eth": "latest",
+    "prysm-prater.dnp.dappnode.eth": "latest"
+  }
+}

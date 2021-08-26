@@ -1,0 +1,28 @@
+version: "2"
+fields:
+  - id: OPERATOR_PRIVATE_KEY
+    target:
+      type: environment
+      name: OPERATOR_PRIVATE_KEY
+    title: Operator Private Key
+    description: >-
+      The private key of your operator, to generate a new one you need to run:
+      ```
+      $ docker run --rm 'bloxstaking/ssv-node:latest' /go/bin/ssvnode generate-operator-keys
+      ```
+      You can check the documentation [4-generate-operator-keys](https://docs.ssv.network/operators/installation-operator-1/installation-operator#4-generate-operator-keys) to get more info about this.
+    required: true
+  - id: BEACON_NODE_ADDR
+    target:
+      type: environment
+      name: BEACON_NODE_ADDR
+    title: Eth2 Beacon chain
+    description: >-
+      URL to the Eth2 Prater Beacon chain endpoint
+  - id: ETH1ADDR
+    target:
+      type: environment
+      name: ETH1ADDR
+    title: Eth1.x fullnode
+    description: >-
+      URL to the Eth1.x Goerli node
