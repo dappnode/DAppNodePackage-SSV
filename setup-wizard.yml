@@ -10,7 +10,11 @@ fields:
       ```
       $ docker run --rm 'bloxstaking/ssv-node:latest' /go/bin/ssvnode generate-operator-keys
       ```
-      You can check the documentation [4-generate-operator-keys](https://docs.ssv.network/operators/installation-operator-1/installation-operator#4-generate-operator-keys) to get more info about this.
+      You need to run this command in a machine that has Docker, like your DAppNode.
+      
+      This command will give you a PK (Public Key) and a SK (Secret Key). Make sure to back up the output of this command in a safe place and only introduce the PK in this field. 
+      
+      Please check the documentation [4-generate-operator-keys](https://docs.ssv.network/operators/installation-operator-1/installation-operator#4-generate-operator-keys) for more information.
     required: true
   - id: BEACON_NODE_ADDR
     target:
