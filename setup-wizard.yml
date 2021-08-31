@@ -5,7 +5,7 @@ fields:
       type: environment
       name: OPERATOR_PRIVATE_KEY
     title: Operator Private Key
-    description: >-
+    description: |-
       The private key of your operator, to generate a new one you need to run:
       ```
       $ docker run --rm 'bloxstaking/ssv-node:latest' /go/bin/ssvnode generate-operator-keys
