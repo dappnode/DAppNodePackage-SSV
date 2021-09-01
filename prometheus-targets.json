@@ -1,0 +1,11 @@
+[
+    {
+        "labels": {
+            "package": "ssv-prater.dnp.dappnode.eth",
+            "service": "ssv-prater.dappnode"
+        },
+        "targets": [
+            "ssv-prater.dappnode:15000"
+        ]
+    }
+]
