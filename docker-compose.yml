@@ -10,7 +10,7 @@ services:
     volumes:
       - "ssv:/data"
     ports:
-      - "13000"
+      - "13000:13000"
       - 12000/udp
     environment:
       CONFIG_PATH: ./config.yml
