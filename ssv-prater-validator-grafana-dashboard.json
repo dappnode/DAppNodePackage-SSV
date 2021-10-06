@@ -21,8 +21,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 16,
-  "iteration": 1632570856104,
+  "id": 25,
+  "iteration": 1633510935161,
   "links": [],
   "panels": [
     {
@@ -797,394 +797,13 @@
       "type": "table"
     },
     {
-      "datasource": "Prometheus",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
+      "collapsed": false,
+      "datasource": null,
       "gridPos": {
-        "h": 8,
-        "w": 12,
+        "h": 1,
+        "w": 24,
         "x": 0,
         "y": 16
-      },
-      "id": 60,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "right"
-        },
-        "tooltip": {
-          "mode": "single"
-        }
-      },
-      "targets": [
-        {
-          "exemplar": true,
-          "expr": "ssv:network:net_messages_inbound{instance=~\"$instance.*\",pubKey=\"$pubkey\",type=\"DecidedType\"}",
-          "interval": "",
-          "legendFormat": "Node {{signer}}",
-          "refId": "A"
-        }
-      ],
-      "title": "Incoming Decided Messages Count",
-      "type": "timeseries"
-    },
-    {
-      "collapsed": false,
-      "datasource": null,
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 24
-      },
-      "id": 64,
-      "panels": [],
-      "title": "IBFT Messages",
-      "type": "row"
-    },
-    {
-      "datasource": "Prometheus",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "custom": {
-            "align": "center",
-            "displayMode": "auto",
-            "width": 120
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 10,
-        "w": 7,
-        "x": 0,
-        "y": 25
-      },
-      "id": 66,
-      "options": {
-        "showHeader": true
-      },
-      "pluginVersion": "8.1.5",
-      "targets": [
-        {
-          "exemplar": true,
-          "expr": "ssv:network:ibft_messages_outbound{instance=~\"$instance.*\",pubKey=\"$pubkey\"}",
-          "format": "table",
-          "instant": true,
-          "interval": "",
-          "legendFormat": "{{seq}}",
-          "refId": "A"
-        }
-      ],
-      "title": "Outgoing IBFT Messages",
-      "transformations": [
-        {
-          "id": "seriesToColumns",
-          "options": {
-            "byField": "seq"
-          }
-        },
-        {
-          "id": "organize",
-          "options": {
-            "excludeByName": {
-              "Time": true,
-              "__name__": true,
-              "instance": true,
-              "job": true,
-              "pubKey": true,
-              "type": false
-            },
-            "indexByName": {
-              "Time": 4,
-              "Value": 2,
-              "__name__": 5,
-              "instance": 6,
-              "job": 7,
-              "pubKey": 8,
-              "round": 3,
-              "seq": 0,
-              "type": 1
-            },
-            "renameByName": {
-              "Value": "Sent Messages",
-              "round": "Round",
-              "seq": "Sequence",
-              "type": "Type"
-            }
-          }
-        },
-        {
-          "id": "sortBy",
-          "options": {
-            "fields": {},
-            "sort": [
-              {
-                "desc": true,
-                "field": "Sequence"
-              }
-            ]
-          }
-        }
-      ],
-      "type": "table"
-    },
-    {
-      "datasource": "Prometheus",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "custom": {
-            "align": "auto",
-            "displayMode": "auto"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 10,
-        "w": 10,
-        "x": 7,
-        "y": 25
-      },
-      "id": 70,
-      "options": {
-        "showHeader": true
-      },
-      "pluginVersion": "8.1.5",
-      "targets": [
-        {
-          "exemplar": true,
-          "expr": "ssv:network:ibft_messages_inbound{instance=~\"$instance.*\",pubKey=\"$pubkey\"}",
-          "format": "table",
-          "instant": true,
-          "interval": "",
-          "legendFormat": "",
-          "refId": "A"
-        }
-      ],
-      "title": "Incoming IBFT Messages",
-      "transformations": [
-        {
-          "id": "seriesToColumns",
-          "options": {
-            "byField": "signer"
-          }
-        },
-        {
-          "id": "organize",
-          "options": {
-            "excludeByName": {
-              "Time": true,
-              "Value": true,
-              "Value #A": true,
-              "__name__": true,
-              "instance": true,
-              "job": true,
-              "pubKey": true
-            },
-            "indexByName": {
-              "Time": 4,
-              "Value": 9,
-              "__name__": 5,
-              "instance": 6,
-              "job": 7,
-              "pubKey": 8,
-              "round": 3,
-              "seq": 0,
-              "signer": 1,
-              "type": 2
-            },
-            "renameByName": {
-              "round": "Round",
-              "seq": "Sequence",
-              "signer": "Node",
-              "type": "Type"
-            }
-          }
-        },
-        {
-          "id": "sortBy",
-          "options": {
-            "fields": {},
-            "sort": [
-              {
-                "desc": true,
-                "field": "Sequence"
-              }
-            ]
-          }
-        }
-      ],
-      "type": "table"
-    },
-    {
-      "datasource": "Prometheus",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisLabel": "",
-            "axisPlacement": "left",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 0,
-        "y": 35
-      },
-      "id": 62,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "right"
-        },
-        "tooltip": {
-          "mode": "single"
-        }
-      },
-      "targets": [
-        {
-          "exemplar": true,
-          "expr": "ssv:network:net_messages_inbound{instance=~\"$instance.*\",pubKey=\"$pubkey\",type=\"IBFTType\"}",
-          "interval": "",
-          "legendFormat": "Node {{signer}}",
-          "refId": "A"
-        }
-      ],
-      "title": "Incoming IBFT Messages Count",
-      "type": "timeseries"
-    },
-    {
-      "collapsed": false,
-      "datasource": null,
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 43
       },
       "id": 56,
       "panels": [],
@@ -1220,7 +839,7 @@
         "h": 6,
         "w": 8,
         "x": 0,
-        "y": 44
+        "y": 17
       },
       "id": 42,
       "options": {
@@ -1294,7 +913,7 @@
         "h": 6,
         "w": 6,
         "x": 8,
-        "y": 44
+        "y": 17
       },
       "id": 50,
       "options": {
@@ -1391,7 +1010,7 @@
         "h": 6,
         "w": 6,
         "x": 14,
-        "y": 44
+        "y": 17
       },
       "id": 46,
       "options": {
@@ -1451,7 +1070,7 @@
         "h": 6,
         "w": 8,
         "x": 0,
-        "y": 50
+        "y": 23
       },
       "id": 54,
       "options": {
@@ -1511,7 +1130,7 @@
         "h": 6,
         "w": 8,
         "x": 8,
-        "y": 50
+        "y": 23
       },
       "id": 52,
       "options": {
@@ -1587,7 +1206,7 @@
         "h": 6,
         "w": 4,
         "x": 16,
-        "y": 50
+        "y": 23
       },
       "id": 48,
       "options": {
@@ -1628,7 +1247,7 @@
       {
         "allValue": null,
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "ssv-prater.dappnode",
           "value": "ssv-prater.dappnode:15000"
         },
@@ -1655,8 +1274,8 @@
         "allValue": null,
         "current": {
           "selected": false,
-          "text": "8b5e94257c82b2b9679eed11fb967234c749c9a7f0d4ded28606be1244150a2b5a1016302fc449efce4aaa91f17ebfde",
-          "value": "8b5e94257c82b2b9679eed11fb967234c749c9a7f0d4ded28606be1244150a2b5a1016302fc449efce4aaa91f17ebfde"
+          "text": "a951db7be8eefdda05049a9442010055a6bd5e7e36b9050b17b02690913935ce7aaef9ac96dd954fcb2cc15cd3789aed",
+          "value": "a951db7be8eefdda05049a9442010055a6bd5e7e36b9050b17b02690913935ce7aaef9ac96dd954fcb2cc15cd3789aed"
         },
         "datasource": "Prometheus",
         "definition": "ssv:network:connected_peers{instance=~\"$instance.*\"}",
