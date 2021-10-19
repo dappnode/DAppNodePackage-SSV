@@ -12,7 +12,7 @@ fields:
       ```
       You need to run this command in a machine that has Docker, like your DAppNode.
       
-      This command will give you a PK (Public Key) and a SK (Secret Key). Make sure to back up the output of this command in a safe place and only introduce the SK in this field. 
+      This command will give you a PK (Public Key) and a SK (Secret Key). Make sure to back up the output of this command in a safe place and only enter the SK (Secret Key) in this field.  The SK (Secret Key) is all the characters (including special characters i.e. =) between the quotation marks (" ") directly following "{"app": "SSV-Node", "sk":"  in the output of the command.
       
       Please check the documentation [4-generate-operator-keys](https://docs.ssv.network/operators/installation-operator-1/installation-operator#4-generate-operator-keys) for more information.
     required: true
