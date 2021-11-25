@@ -1603,7 +1603,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "(rate(container_cpu_usage_seconds_total{image!=\"\",container_label_org_label_schema_group=\"\", name=\"DAppNodePackage-ssv-prater.dnp.dappnode.eth\"}[1m])) / scalar(count(node_cpu_seconds_total{mode=\"user\"})) * 100",
+          "expr": "sum (rate (container_cpu_usage_seconds_total{image!=\"\",container_label_org_label_schema_group=\"\", name=\"DAppNodePackage-ssv-prater.dnp.dappnode.eth\"}[1m])) by (instance)",
           "format": "time_series",
           "hide": false,
           "interval": "10s",
