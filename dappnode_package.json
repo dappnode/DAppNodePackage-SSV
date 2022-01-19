@@ -12,7 +12,7 @@
     "Eduardo Antuña <edu@dappnode.io> (https://github.com/eduadiez)"
   ],
   "categories": ["Blockchain", "ETH2.0"],
-  "license": "GLP-3.0",
+  "license": "GPL-3.0",
   "links": {
     "explorer": "https://explorer.ssv.network/",
     "homepage": "https://ssv.network/"
@@ -25,7 +25,6 @@
     "url": "https://github.com/dappnode/DAppNodePackage-SSV/issues"
   },
   "dependencies": {
-    "goerli-geth.dnp.dappnode.eth": "latest",
-    "prysm-prater.dnp.dappnode.eth": "latest"
+    "goerli-geth.dnp.dappnode.eth": "latest"
   }
 }
