@@ -20,6 +20,7 @@ services:
       ETH1ADDR: "ws://goerli-geth.dappnode:8546"
       REGISTRY_CONTRACT_ADDR: "0x687fb596F3892904F879118e2113e1EEe8746C2E"
       OPERATOR_PRIVATE_KEY: ""
+      LOG_LEVEL: info
       EXTRA_OPTS: ""
 volumes:
   ssv: {}
