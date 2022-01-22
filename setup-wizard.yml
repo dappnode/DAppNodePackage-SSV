@@ -30,3 +30,18 @@ fields:
     title: Eth1.x fullnode
     description: >-
       URL to the Eth1.x Goerli node
+  - id: LOG_LEVEL
+    target:
+      type: environment
+      name: LOG_LEVEL
+    title: Log Level
+    description: >-
+      Defines logger's log level
+    enum:
+      - info
+      - debug
+      - warn
+      - error
+      - panic
+      - fatal
+    required: true
