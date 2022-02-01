@@ -25,6 +25,7 @@
     "url": "https://github.com/dappnode/DAppNodePackage-SSV/issues"
   },
   "dependencies": {
-    "goerli-geth.dnp.dappnode.eth": "latest"
+    "goerli-geth.dnp.dappnode.eth": "latest",
+    "prysm-prater.dnp.dappnode.eth": "latest"
   }
 }
