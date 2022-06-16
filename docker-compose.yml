@@ -5,13 +5,13 @@ services:
     build:
       context: build
       args:
-        UPSTREAM_VERSION: v0.1.12
+        UPSTREAM_VERSION: v0.2.0
     restart: unless-stopped
     volumes:
       - "ssv:/data"
     ports:
-      - "13000:13000"
-      - 12000/udp
+      - "13001:13001"
+      - 12001/udp
     environment:
       CONFIG_PATH: ./config.yml
       DB_PATH: /data/db
