@@ -20,16 +20,16 @@ fields:
     target:
       type: environment
       name: BEACON_NODE_ADDR
-    title: Eth2 Beacon chain
+    title: Consensus Layer Beacon-Chain
     description: >-
-      URL to the Eth2 Prater Beacon chain endpoint
+      URL to the Consensus Layer Prater Beacon-Chain Endpoint
   - id: ETH1ADDR
     target:
       type: environment
       name: ETH1ADDR
-    title: Eth1.x fullnode
+    title: Execution Layer Full Node
     description: >-
-      URL to the Eth1.x Goerli node
+      URL to the Execution Layer Goerli node
   - id: LOG_LEVEL
     target:
       type: environment
