@@ -1,7 +1,7 @@
 {
   "name": "ssv-prater.dnp.dappnode.eth",
   "version": "0.1.0",
-  "upstreamVersion": "v0.2.1-rc.1",
+  "upstreamVersion": "v0.3.1",
   "upstreamRepo": "bloxapp/ssv",
   "upstreamArg": "UPSTREAM_VERSION",
   "shortDescription": "Secret Shared Validator Prater Testnet",
