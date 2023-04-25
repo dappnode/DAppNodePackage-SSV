@@ -2,21 +2,21 @@
     {
         "labels": {
             "package": "ssv-prater.dnp.dappnode.eth",
-            "service": "ssv-prater.dappnode",
+            "service": "ssv.ssv-prater.dappnode",
             "__metrics_path__": "/metrics"
         },
         "targets": [
-            "ssv-prater.dappnode:15000"
+            "ssv.ssv-prater.dappnode:15000"
         ]
     },
     {
         "labels": {
             "package": "ssv-prater.dnp.dappnode.eth",
-            "service": "ssv-prater.dappnode",
+            "service": "ssv.ssv-prater.dappnode",
             "__metrics_path__": "/health"
         },
         "targets": [
-            "ssv-prater.dappnode:15000"
+            "ssv.ssv-prater.dappnode:15000"
         ]
     }
 ]
