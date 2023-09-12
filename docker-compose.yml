@@ -1,11 +1,11 @@
 version: "3.5"
 services:
   ssv:
-    image: "ssv.ssv-prater.dnp.dappnode.eth:0.1.0"
+    image: "ssv.ssv-prater.dnp.dappnode.eth:1.0.1"
     build:
       context: build
       args:
-        UPSTREAM_VERSION: v0.5.4
+        UPSTREAM_VERSION: v1.0.0-rc.1
     restart: unless-stopped
     volumes:
       - "ssv:/data"
@@ -15,7 +15,8 @@ services:
     environment:
       CONFIG_PATH: ./config.yml
       DB_PATH: /data/db
-      NETWORK: prater
+      NETWORK: jato-v2
+      BUILDER_PROPOSALS: "false"
       OPERATOR_PRIVATE_KEY: ""
       P2P_TCP_PORT: 12514
       P2P_UDP_PORT: 13514
