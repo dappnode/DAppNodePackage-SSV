@@ -4,14 +4,11 @@ This package allows Dappnode Users to help test the SSV Network.  A pioneer in t
 
 Note - You will need SSH or direct console access to your Dappnode in order to use it to generate your operator keys.
 
-_Warning: This package is separate from the Original SSV Prater Package.
-If you participated in the first V1 SSV testnet "Primus" please be sure to create a new operator account for this iteration of the SSV Testnet._
-
-_Warning: This package has been modified for the Jato V3 Testnet, which will be restarted in Mid-February 2023. SSV Shifu Operators must upgrade to this version of the package or higher in order to continue operating on the network._
+_Warning: This package has been modified for the Jato-V2 Testnet, which will be restarted in Mid-September 2023. SSV Jato-v1 Operators must upgrade to this version of the package or higher in order to continue operating on the network._
 
 ## Generate Operator Keys
 
-**DO NOT** Reuse keys from the V1 "Primus" Testnet or V2 "Shifu"; You need to create new keys and register them [here](https://app.ssv.network/join/operator/register) .
+**DO NOT** Reuse keys from the V1 "Primus" Testnet or V2 "Shifu"; You need to create new keys and register them [here](https://app.ssv.network/join/operator/register) or [https://beta.app.ssv.network/join/operator/register](https://beta.app.ssv.network/join/operator/register) **before September 18, 2023**.
 
 You'll need a keypair in order to run an operator on SSV. To generate a new keypair, you will need access to a terminal on a machine connected to the Internet with Docker installed, such as your Dappnode.  You need to run the following command :
       
@@ -25,7 +22,7 @@ This command will generate a PK (Public Key) and a SK (Secret Key). Make sure to
 
 Registration is free and open to anyone who wishes to operate validators with SSV. This is done in the Web App linked below.
 
-Register your new operator (**DO NOT REUSE OPERATORS FROM THE V1 "Primus" TESTNET**) using this [Web App](https://app.ssv.network/join/operator/register)
+Register your new operator (**DO NOT REUSE OPERATORS FROM THE V1 "Primus" TESTNET or V2 "Shifu"**) using this [Web App](https://app.ssv.network/join/operator/register) or [https://beta.app.ssv.network/join/operator/register](https://beta.app.ssv.network/join/operator/register) **before September 18, 2023**.
 
 Follow [these instructions](https://docs.ssv.network/run-a-node/operator-node/registration) to register your operator.
 After registration, your operator becomes discoverable as one of the network's operators and SSV stakers can choose you as one of their validator's operators.

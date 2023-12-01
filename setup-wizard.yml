@@ -18,6 +18,18 @@ fields:
       Please check the official documentation from the SSV Team [here](https://docs.ssv.network/run-a-node/operator-node/installation#generate-operator-keys) for more information. 
       Note - You will need SSH or direct console access to your Dappnode in order to use it to generate your operator keys.
     required: true
+  - id: BUILDER_PROPOSALS
+    target:
+      type: environment
+      name: BUILDER_PROPOSALS
+      service: ssv
+    title: Builder Proposals
+    description: |-
+      Whether to enable MEV block production. Requires the connected Beacon node to be MEV-enabled.
+    enum:
+      - "true"
+      - "false"
+    required: true
   - id: LOG_LEVEL
     target:
       type: environment

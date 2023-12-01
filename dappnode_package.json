@@ -1,7 +1,7 @@
 {
   "name": "ssv-prater.dnp.dappnode.eth",
   "version": "1.0.1",
-  "upstreamVersion": "v0.5.4",
+  "upstreamVersion": "v1.0.0-rc.1",
   "upstreamRepo": "bloxapp/ssv",
   "upstreamArg": "UPSTREAM_VERSION",
   "architectures": ["linux/amd64"],
@@ -17,7 +17,7 @@
   "license": "GPL-3.0",
   "links": {
     "Grafana Dashboards": "http://dms.dappnode/dashboards/f/ssv-prater-dashboards/ssv-prater-dashboards",
-    "SSV.Network Explorer": "https://explorer.ssv.network/",
+    "SSV.Network Explorer": "https://goerli.explorer.ssv.network/",
     "Homepage": "https://ssv.network/",
     "Validator Deposit Bot": "https://discord.gg/CBwPUX2Aav",
     "Docs": "https://docs.ssv.network/learn/introduction",

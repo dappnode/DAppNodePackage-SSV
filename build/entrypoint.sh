@@ -48,7 +48,8 @@ esac
 export BEACON_NODE_API=$_BEACON_NODE_API
 
 yq e -i '.db.Path = strenv(DB_PATH)' ./config.yml
-yq e -i '.eth2.Network = strenv(NETWORK)' ./config.yml
+yq e -i '.ssv.Network = strenv(NETWORK)' ./config.yml
+yq e -i '.ssv.ValidatorOptions.BuilderProposals = (strenv(BUILDER_PROPOSALS) == "true")' ./config.yml
 yq e -i '.eth2.BeaconNodeAddr = strenv(BEACON_NODE_API)' ./config.yml
 yq e -i '.eth1.ETH1Addr = strenv(EXECUTION_LAYER_WS)' ./config.yml
 yq e -i '.p2p.TCPPort = strenv(P2P_TCP_PORT)' ./config.yml
