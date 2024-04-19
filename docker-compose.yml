@@ -1,26 +1,38 @@
 version: "3.5"
 services:
-  ssv:
-    image: "ssv.ssv-prater.dnp.dappnode.eth:1.0.1"
+  operator:
     build:
-      context: build
+      context: operator
       args:
-        UPSTREAM_VERSION: v1.0.0-rc.1
+        UPSTREAM_VERSION: v1.3.3
     restart: unless-stopped
     volumes:
-      - "ssv:/data"
+      - operator-data:/data/operator
     ports:
-      - "12514:12514/tcp"
-      - "13514:13514/udp"
+      - 12516:12516/tcp
+      - 13516:13516/udp
     environment:
-      CONFIG_PATH: ./config.yml
-      DB_PATH: /data/db
-      NETWORK: jato-v2
       BUILDER_PROPOSALS: "false"
-      OPERATOR_PRIVATE_KEY: ""
-      P2P_TCP_PORT: 12514
-      P2P_UDP_PORT: 13514
       LOG_LEVEL: info
       EXTRA_OPTS: ""
+      PRIVATE_KEY_PASS: ""
+    image: operator.ssv.dnp.dappnode.eth:0.1.0
+  dkg:
+    build:
+      context: dkg
+      args:
+        DGK_UPSTREAM_VERSION: v2.0.0
+    restart: on-failure
+    volumes:
+      - operator-data:/data/operator
+      - dkg-data:/data/dkg
+    ports:
+      - "14516:14516"
+    environment:
+      LOG_LEVEL: info
+      OPERATOR_ID: ""
+      EXTRA_OPTS: ""
+    image: dkg.ssv.dnp.dappnode.eth:0.1.0
 volumes:
-  ssv: {}
+  dkg-data: {}
+  operator-data: {}

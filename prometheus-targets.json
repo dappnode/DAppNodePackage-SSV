@@ -1,22 +1,18 @@
 [
-    {
-        "labels": {
-            "package": "ssv-prater.dnp.dappnode.eth",
-            "service": "ssv.ssv-prater.dappnode",
-            "__metrics_path__": "/metrics"
-        },
-        "targets": [
-            "ssv.ssv-prater.dappnode:15000"
-        ]
+  {
+    "labels": {
+      "package": "ssv.dnp.dappnode.eth",
+      "service": "operator.ssv.dappnode",
+      "__metrics_path__": "/metrics"
     },
-    {
-        "labels": {
-            "package": "ssv-prater.dnp.dappnode.eth",
-            "service": "ssv.ssv-prater.dappnode",
-            "__metrics_path__": "/health"
-        },
-        "targets": [
-            "ssv.ssv-prater.dappnode:15000"
-        ]
-    }
+    "targets": ["operator.ssv.dappnode:15000"]
+  },
+  {
+    "labels": {
+      "package": "ssv.dnp.dappnode.eth",
+      "service": "operator.ssv.dappnode",
+      "__metrics_path__": "/health"
+    },
+    "targets": ["operator.ssv.dappnode:15000"]
+  }
 ]

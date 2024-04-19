@@ -1,11 +1,11 @@
 {
-  "name": "ssv-prater.dnp.dappnode.eth",
-  "version": "1.0.1",
-  "upstreamVersion": "v1.0.0-rc.1",
+  "name": "ssv.dnp.dappnode.eth",
+  "version": "0.1.0",
+  "upstreamVersion": "v1.3.3",
   "upstreamRepo": "bloxapp/ssv",
   "upstreamArg": "UPSTREAM_VERSION",
   "architectures": ["linux/amd64"],
-  "shortDescription": "Secret Shared Validator Goerli Jato Testnet",
+  "shortDescription": "Secret Shared Validator for Ethereum mainnet",
   "description": "SSV.network is a decentralized ETH staking network enabling the distributed operation of an Ethereum validator. The network allows both users and operators to diversify staking risks, optimize performance, and promote decentralization across the Ethereum consensus layer.",
   "type": "service",
   "author": "DAppNode Association <admin@dappnode.io> (https://github.com/dappnode)",
@@ -16,28 +16,39 @@
   "categories": ["Blockchain", "ETH2.0"],
   "license": "GPL-3.0",
   "links": {
-    "Grafana Dashboards": "http://dms.dappnode/dashboards/f/ssv-prater-dashboards/ssv-prater-dashboards",
-    "SSV.Network Explorer": "https://goerli.explorer.ssv.network/",
+    "Grafana Dashboards": "http://dms.dappnode/dashboards/f/ssv-dashboards/ssv-dashboards",
+    "SSV.Network Explorer": "https://explorer.ssv.network/",
     "Homepage": "https://ssv.network/",
-    "Validator Deposit Bot": "https://discord.gg/CBwPUX2Aav",
     "Docs": "https://docs.ssv.network/learn/introduction",
     "tSSV Faucet": "https://faucet.ssv.network/",
     "SSV Web App": "http://app.ssv.network/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dappnode/DAppNodePackage-SSV.git"
+    "url": "git+https://github.com/dappnode/DAppNodePackage-holesky-SSV.git"
   },
   "bugs": {
-    "url": "https://github.com/dappnode/DAppNodePackage-SSV/issues"
+    "url": "https://github.com/dappnode/DAppNodePackage-holesky-SSV/issues"
   },
   "requirements": {
     "minimumDappnodeVersion": "0.2.58"
   },
   "globalEnvs": [
     {
-      "envs": ["EXECUTION_CLIENT_PRATER", "CONSENSUS_CLIENT_PRATER"],
-      "services": ["ssv"]
+      "envs": ["EXECUTION_CLIENT_MAINNET", "CONSENSUS_CLIENT_MAINNET"],
+      "services": ["operator"]
+    }
+  ],
+  "backup": [
+    {
+      "name": "operator-config",
+      "path": "/data/operator/config",
+      "service": "operator"
+    },
+    {
+      "name": "dkg-output",
+      "path": "/data/dkg/output",
+      "service": "dkg"
     }
   ]
 }

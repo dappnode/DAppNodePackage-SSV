@@ -1,28 +1,23 @@
 version: "2"
 fields:
-  - id: OPERATOR_PRIVATE_KEY
+  - id: setup-mode
+    title: Setup mode
+    description: |-
+      If this is the first install or just a simple update, choose "New operator / Update" option and continue with the installation. If you want to import an existing operator, choose "Import key" and fulfill the inputs below.
+    enum:
+      - "New Operator / Update"
+      - "Import Operator"
     target:
       type: environment
-      name: OPERATOR_PRIVATE_KEY
-      service: ssv
-    title: Operator Secret Key
-    description: |-
-      The secret key of your operator, to generate a new one you will need access to a terminal on a machine connected to the Internet with Docker installed, such as your Dappnode.  You need to run the following command :
-      ```
-      docker run -d --name=ssv_node_op_key -it 'bloxstaking/ssv-node:latest' \
-      /go/bin/ssvnode generate-operator-keys && docker logs ssv_node_op_key --follow \
-      && docker stop ssv_node_op_key && docker rm ssv_node_op_key
-      ```      
-      This command will generate a PK (Public Key) and a SK (Secret Key). Make sure to back up the output of this command in a safe place and only enter the SK (Secret Key) in this field.  The SK (Secret Key) is all the characters (including special characters i.e. =) between the quotation marks (" ") directly following "{"app": "SSV-Node", "sk":"  in the output of the command.
-      
-      Please check the official documentation from the SSV Team [here](https://docs.ssv.network/run-a-node/operator-node/installation#generate-operator-keys) for more information. 
-      Note - You will need SSH or direct console access to your Dappnode in order to use it to generate your operator keys.
-    required: true
-  - id: BUILDER_PROPOSALS
+      name: SETUP_MODE
+      service: operator
+    required: false
+
+  - id: builder-proposals
     target:
       type: environment
       name: BUILDER_PROPOSALS
-      service: ssv
+      service: operator
     title: Builder Proposals
     description: |-
       Whether to enable MEV block production. Requires the connected Beacon node to be MEV-enabled.
@@ -30,19 +25,28 @@ fields:
       - "true"
       - "false"
     required: true
-  - id: LOG_LEVEL
+    default: "false"
+
+  - id: encrypted-private-key
+    target:
+      type: fileUpload
+      path: /data/operator/config/encrypted_private_key.json
+      service: operator
+    title: Encrypted private key
+    description: |
+      Provide here the encrypted private key in JSON format.
+    pattern: "\\.json"
+    required: true
+    if: { "setup-mode": { "enum": ["Import Operator"] } }
+
+  - id: encrypted-private-key-pass
     target:
       type: environment
-      name: LOG_LEVEL
-      service: ssv
-    title: Log Level
-    description: >-
-      Defines logger's log level
-    enum:
-      - info
-      - debug
-      - warn
-      - error
-      - panic
-      - fatal
+      name: PRIVATE_KEY_PASS
+      service: operator
+    title: Encrypted private key password
+    secret: true
+    description: |
+      Provide here the encrypted private key password.
     required: true
+    if: { "setup-mode": { "enum": ["Import Operator"] } }
