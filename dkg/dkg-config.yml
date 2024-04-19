@@ -1,0 +1,8 @@
+privKey:
+privKeyPassword:
+port:
+storeShare: true
+logLevel:
+logFormat: json
+logLevelFormat: capitalColor
+logFilePath: /data/dkg.log

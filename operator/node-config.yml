@@ -1,0 +1,27 @@
+global:
+  LogLevel:
+  LogFilePath: /data/node.log
+
+db:
+  Path:
+
+ssv:
+  Network:
+  ValidatorOptions:
+    BuilderProposals:
+
+eth2:
+  BeaconNodeAddr:
+
+eth1:
+  ETH1Addr:
+
+p2p:
+  TCPPort:
+  UDPPort:
+
+KeyStore:
+  PrivateKeyFile:
+  PasswordFile:
+
+MetricsAPIPort: 15000
