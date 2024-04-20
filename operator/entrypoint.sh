@@ -22,11 +22,11 @@ assign_execution_endpoint() {
   "geth.dnp.dappnode.eth")
     EXECUTION_LAYER_WS="ws://geth.dappnode:8546"
     ;;
-  "nethermind.dnp.dappnode.eth")
-    EXECUTION_LAYER_WS="ws://nethermind.dappnode:8546"
+  "nethermind.public.dappnode.eth")
+    EXECUTION_LAYER_WS="ws://nethermind.public.dappnode:8546"
     ;;
-  "besu.dnp.dappnode.eth")
-    EXECUTION_LAYER_WS="ws://besu.dappnode:8546"
+  "besu.public.dappnode.eth")
+    EXECUTION_LAYER_WS="ws://besu.public.dappnode:8546"
     ;;
   "erigon.dnp.dappnode.eth")
     EXECUTION_LAYER_WS="ws://erigon.dappnode:8545"
