@@ -23,13 +23,13 @@ assign_execution_endpoint() {
     EXECUTION_LAYER_WS="ws://geth.dappnode:8546"
     ;;
   "nethermind.public.dappnode.eth")
-    EXECUTION_LAYER_WS="ws://nethermind.public.dappnode:8546"
+    EXECUTION_LAYER_WS="ws://nethermind.public.dappnode:8545"
     ;;
   "besu.public.dappnode.eth")
     EXECUTION_LAYER_WS="ws://besu.public.dappnode:8546"
     ;;
   "erigon.dnp.dappnode.eth")
-    EXECUTION_LAYER_WS="ws://erigon.dappnode:8545"
+    EXECUTION_LAYER_WS="ws://erigon.dappnode:8546"
     ;;
   *)
     echo "[ERROR] Unknown value for _DAPPNODE_GLOBAL_EXECUTION_CLIENT_MAINNET. Please confirm that the value is correct."
