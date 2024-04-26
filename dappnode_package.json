@@ -13,7 +13,7 @@
     "Eduardo Antuña <edu@dappnode.io> (https://github.com/eduadiez)",
     "Voss <voss@VisNovaLabs.io> (https://github.com/alexpeterson91)"
   ],
-  "categories": ["Blockchain", "ETH2.0"],
+  "categories": ["Lido", "ETH2.0"],
   "license": "GPL-3.0",
   "links": {
     "Grafana Dashboards": "http://dms.dappnode/dashboards/f/ssv-dashboards/ssv-dashboards",
