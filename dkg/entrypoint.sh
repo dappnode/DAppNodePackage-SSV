@@ -51,6 +51,11 @@ fetch_operator_id_from_api() {
 
     PUBLIC_KEY=$(jq -r '.pubKey' ${PRIVATE_KEY_FILE})
 
+    # If the PUBLIC_KEY is empty, try extracting using the '.publicKey' field (for previous SSV versions)
+    if [ -z "$PUBLIC_KEY" ] || [ "$PUBLIC_KEY" = "null" ]; then
+        PUBLIC_KEY=$(jq -r '.publicKey' "${PRIVATE_KEY_FILE}")
+    fi
+
     # Fetch the operator ID using the public key (retry 50 times with a delay of 10mins)
     RESPONSE=$(curl --retry 50 --retry-delay 600 "https://api.ssv.network/api/v4/${NETWORK}/operators/public_key/${PUBLIC_KEY}")
 
