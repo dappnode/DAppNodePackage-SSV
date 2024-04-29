@@ -99,6 +99,11 @@ handle_private_key() {
 post_pubkey_to_dappmanager() {
   PUBLIC_KEY=$(jq -r '.pubKey' ${PRIVATE_KEY_FILE})
 
+  # If the PUBLIC_KEY is empty, try extracting using the '.publicKey' field (for previous SSV versions)
+  if [ -z "$PUBLIC_KEY" ] || [ "$PUBLIC_KEY" = "null" ]; then
+    PUBLIC_KEY=$(jq -r '.publicKey' "${PRIVATE_KEY_FILE}")
+  fi
+
   curl --connect-timeout 5 \
     --max-time 10 \
     --silent \
