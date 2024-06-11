@@ -15,6 +15,7 @@
   ],
   "categories": ["Lido", "ETH2.0"],
   "license": "GPL-3.0",
+  "mainService": "operator",
   "links": {
     "Grafana Dashboards": "http://dms.dappnode/dashboards/f/ssv-dashboards/ssv-dashboards",
     "SSV.Network Explorer": "https://explorer.ssv.network/",
