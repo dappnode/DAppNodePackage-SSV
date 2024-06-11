@@ -34,5 +34,5 @@ services:
       EXTRA_OPTS: ""
     image: dkg.ssv.dnp.dappnode.eth:0.1.0
 volumes:
-  dkg-data: {}
   operator-data: {}
+  dkg-data: {}
