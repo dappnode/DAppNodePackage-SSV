@@ -1,6 +1,6 @@
-ARG UPSTREAM_VERSION
+ARG OPERATOR_UPSTREAM_VERSION
 
-FROM bloxstaking/ssv-node:${UPSTREAM_VERSION}
+FROM bloxstaking/ssv-node:${OPERATOR_UPSTREAM_VERSION}
 
 # Use apt
 RUN apt-get update && \

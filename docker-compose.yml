@@ -4,7 +4,7 @@ services:
     build:
       context: operator
       args:
-        UPSTREAM_VERSION: v1.3.4
+        OPERATOR_UPSTREAM_VERSION: v1.3.4
     restart: unless-stopped
     volumes:
       - operator-data:/data/operator
