@@ -1,9 +1,18 @@
 {
   "name": "ssv.dnp.dappnode.eth",
   "version": "0.1.1",
-  "upstreamVersion": "v1.3.4",
-  "upstreamRepo": "bloxapp/ssv",
-  "upstreamArg": "UPSTREAM_VERSION",
+  "upstream":[
+    {
+      "repo": "ssvlabs/ssv",
+      "version": "v1.3.4",
+      "arg": "OPERATOR_UPSTREAM_VERSION"
+    },
+    {
+      "repo": "ssvlabs/ssv-dkg",
+      "version": "v2.1.0",
+      "arg": "DKG_UPSTREAM_VERSION"
+    }
+  ],
   "architectures": ["linux/amd64"],
   "shortDescription": "Secret Shared Validator for Ethereum mainnet",
   "description": "SSV.network is a decentralized ETH staking network enabling the distributed operation of an Ethereum validator. The network allows both users and operators to diversify staking risks, optimize performance, and promote decentralization across the Ethereum consensus layer.",
