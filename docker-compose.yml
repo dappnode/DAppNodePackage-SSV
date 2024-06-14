@@ -21,7 +21,7 @@ services:
     build:
       context: dkg
       args:
-        DGK_UPSTREAM_VERSION: v2.0.0
+        DGK_UPSTREAM_VERSION: v2.1.0
     restart: on-failure
     volumes:
       - operator-data:/data/operator
