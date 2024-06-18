@@ -4,7 +4,7 @@
   "upstream": [
     {
       "repo": "ssvlabs/ssv",
-      "version": "v1.3.4",
+      "version": "v1.3.5",
       "arg": "OPERATOR_UPSTREAM_VERSION"
     },
     {
