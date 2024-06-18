@@ -1,4 +1,4 @@
-# **SSV Holesky**
+# **SSV**
 
 SSV is a network of validators that use a decentralized network of operators to run their validators. This package allows you to run an SSV Operator Node on Ethereum mainnet.
 

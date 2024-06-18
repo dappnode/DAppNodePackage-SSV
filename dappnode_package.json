@@ -1,7 +1,7 @@
 {
   "name": "ssv.dnp.dappnode.eth",
   "version": "0.1.1",
-  "upstream":[
+  "upstream": [
     {
       "repo": "ssvlabs/ssv",
       "version": "v1.3.4",
@@ -35,10 +35,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dappnode/DAppNodePackage-holesky-SSV.git"
+    "url": "git+https://github.com/dappnode/DAppNodePackage-SSV.git"
   },
   "bugs": {
-    "url": "https://github.com/dappnode/DAppNodePackage-holesky-SSV/issues"
+    "url": "https://github.com/dappnode/DAppNodePackage-SSV/issues"
   },
   "requirements": {
     "minimumDappnodeVersion": "0.2.58"

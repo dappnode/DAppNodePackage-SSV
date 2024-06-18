@@ -11,6 +11,10 @@ OPERATOR_ID_FILE=${OPERATOR_CONFIG_DIR}/operator_id.txt
 DKG_CONFIG_FILE=${DKG_CONFIG_DIR}/dkg-config.yml
 DKG_LOG_FILE=${DKG_LOGS_DIR}/dkg.log
 
+CERT_DIR=/ssl
+CERT_FILE="$CERT_DIR/tls.crt"
+KEY_FILE="$CERT_DIR/tls.key"
+
 create_directories() {
     mkdir -p ${DKG_CONFIG_DIR} ${DKG_LOGS_DIR} ${DKG_OUTPUT_DIR}
 }
@@ -73,6 +77,22 @@ fetch_operator_id_from_api() {
     fi
 }
 
+generate_tls_cert() {
+    echo "[INFO] Generating TLS certificates..."
+
+    mkdir -p "$CERT_DIR"
+
+    # Generate a self-signed SSL certificate only if it doesn't exist
+    if [ ! -f "$CERT_FILE" ] || [ ! -f "$KEY_FILE" ]; then
+      echo "[INFO] Certificate or key file not found. Generating new SSL certificate and key."
+      openssl req -x509 -newkey rsa:4096 -sha256 -days 3650 -nodes \
+        -keyout "$KEY_FILE" -out "$CERT_FILE" \
+        -subj "/C=IL/ST=Tel Aviv/L=Tel Aviv/O=Coin-Dash Ltd/CN=*.ssvlabs.io"
+    else
+      echo "[INFO] Existing SSL certificate and key found. Using them."
+    fi
+}
+
 start_dkg() {
     exec /bin/ssv-dkg start-operator \
         --operatorID ${OPERATOR_ID} \
@@ -89,6 +109,7 @@ main() {
     create_directories
     wait_for_private_key
     get_operator_id
+    generate_tls_cert
     start_dkg
 }
 
