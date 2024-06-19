@@ -4,6 +4,7 @@ OPERATOR_CONFIG_DIR=${OPERATOR_DATA_DIR}/config
 DKG_LOGS_DIR=${DKG_DATA_DIR}/logs
 DKG_OUTPUT_DIR=${DKG_DATA_DIR}/output
 DKG_DB_PATH=${DKG_DATA_DIR}/db
+DKG_CERT_DIR=${DKG_DATA_DIR}/ssl
 
 PRIVATE_KEY_FILE=${OPERATOR_CONFIG_DIR}/encrypted_private_key.json
 PRIVATE_KEY_PASSWORD_FILE=${OPERATOR_CONFIG_DIR}/private_key_password
@@ -11,9 +12,8 @@ OPERATOR_ID_FILE=${OPERATOR_CONFIG_DIR}/operator_id.txt
 DKG_CONFIG_FILE=${DKG_CONFIG_DIR}/dkg-config.yml
 DKG_LOG_FILE=${DKG_LOGS_DIR}/dkg.log
 
-CERT_DIR=/ssl
-CERT_FILE="$CERT_DIR/tls.crt"
-KEY_FILE="$CERT_DIR/tls.key"
+CERT_FILE="$DKG_CERT_DIR/tls.crt"
+KEY_FILE="$DKG_CERT_DIR/tls.key"
 
 create_directories() {
     mkdir -p ${DKG_CONFIG_DIR} ${DKG_LOGS_DIR} ${DKG_OUTPUT_DIR}
@@ -80,7 +80,7 @@ fetch_operator_id_from_api() {
 generate_tls_cert() {
     echo "[INFO] Generating TLS certificates..."
 
-    mkdir -p "$CERT_DIR"
+    mkdir -p "$DKG_CERT_DIR"
 
     # Generate a self-signed SSL certificate only if it doesn't exist
     if [ ! -f "$CERT_FILE" ] || [ ! -f "$KEY_FILE" ]; then
@@ -102,7 +102,9 @@ start_dkg() {
         --outputPath ${DKG_OUTPUT_DIR} \
         --port ${DKG_PORT} \
         --privKey ${PRIVATE_KEY_FILE} \
-        --privKeyPassword ${PRIVATE_KEY_PASSWORD_FILE}
+        --privKeyPassword ${PRIVATE_KEY_PASSWORD_FILE} \
+        --serverTLSCertPath ${CERT_FILE} \
+        --serverTLSKeyPath ${KEY_FILE}
 }
 
 main() {
