@@ -16,7 +16,7 @@ services:
       LOG_LEVEL: info
       EXTRA_OPTS: ""
       PRIVATE_KEY_PASS: ""
-    image: operator.ssv.dnp.dappnode.eth:0.1.0
+    image: operator.ssv.dnp.dappnode.eth:0.1.1
   dkg:
     build:
       context: dkg
@@ -32,7 +32,7 @@ services:
       LOG_LEVEL: info
       OPERATOR_ID: ""
       EXTRA_OPTS: ""
-    image: dkg.ssv.dnp.dappnode.eth:0.1.0
+    image: dkg.ssv.dnp.dappnode.eth:0.1.1
 volumes:
   dkg-data: {}
   operator-data: {}
