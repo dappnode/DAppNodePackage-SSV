@@ -14,7 +14,7 @@ DEFAULT_PRIVATE_KEY_FILE=/encrypted_private_key.json
 RAW_NODE_YML_CONFIG_FILE=${NODE_CONFIG_DIR}/raw-node-config.yml
 
 create_directories() {
-  mkdir -p ${OPERATOR_CONFIG_DIR} ${OPERATOR_DB_DIR} ${OPERATOR_LOGS_DIR}
+  mkdir -p "${OPERATOR_CONFIG_DIR}" "${OPERATOR_DB_DIR}" "${OPERATOR_LOGS_DIR}"
 }
 
 assign_execution_endpoint() {
@@ -97,7 +97,7 @@ handle_private_key() {
 }
 
 post_pubkey_to_dappmanager() {
-  PUBLIC_KEY=$(jq -r '.pubKey' ${PRIVATE_KEY_FILE})
+  PUBLIC_KEY=$(jq -r '.pubKey' "${PRIVATE_KEY_FILE}")
 
   # If the PUBLIC_KEY is empty, try extracting using the '.publicKey' field (for previous SSV versions)
   if [ -z "$PUBLIC_KEY" ] || [ "$PUBLIC_KEY" = "null" ]; then
@@ -149,17 +149,19 @@ create_operator_config() {
 start_operator() {
   echo "[INFO] Starting SSV operator..."
 
-  /go/bin/ssvnode start-node --config ${NODE_CONFIG_FILE} ${EXTRA_OPTS} &
+  /go/bin/ssvnode start-node --config "${NODE_CONFIG_FILE}" "${EXTRA_OPTS}" &
 
   wait $!
   EXIT_STATUS=$?
 
   # Backup restoring causes the operator to find a mismatch in the DB
-  if [ $EXIT_STATUS -ne 0 ] && grep -q "operator private key is not matching the one encrypted the storage" ${NODE_LOG_FILE}; then
+  if [ $EXIT_STATUS -ne 0 ] && grep -q "operator private key is not matching the one encrypted the storage" "${NODE_LOG_FILE}"; then
     echo "[WARN] Detected private key mismatch, probably due to backup restoring. Removing DB and retrying..."
-    rm -rf ${OPERATOR_DB_DIR}/*
 
-    exec /go/bin/ssvnode start-node --config ${NODE_CONFIG_FILE} ${EXTRA_OPTS}
+    # Added :? to prevent accidental deletion of root directory (if $OPERATOR_DB_DIR is empty or unset)
+    rm -rf "${OPERATOR_DB_DIR:?}"/*
+
+    exec /go/bin/ssvnode start-node --config "${NODE_CONFIG_FILE}" "${EXTRA_OPTS}"
   else
     exit $EXIT_STATUS
   fi
