@@ -18,7 +18,7 @@ The SSV Network is a decentralized, open-source Ethereum staking network that en
 
 ## DKG Setup Steps
 
-1. Verify that your operator registration on the SSV network is active, and confirm that the DKG service is running by checking the [SSV Info Tab](http://my.dappnode/packages/my/ssv.dnp.dappnode.eth/info).
+1. Verify that your operator is registered on the SSV network, and confirm that the DKG service is running by checking the [SSV Info Tab](http://my.dappnode/packages/my/ssv.dnp.dappnode.eth/info).
 
 2. Configure your node as a DKG endpoint by adding `https://<your-public-ip>:14516` in the [SSV App Operator Config](https://app.ssv.network/my-account/operator/edit-metadata).
 
