@@ -14,8 +14,8 @@
     }
   ],
   "architectures": ["linux/amd64"],
-  "shortDescription": "Secret Shared Validator for Ethereum mainnet",
-  "description": "SSV.network is a decentralized ETH staking network enabling the distributed operation of an Ethereum validator. The network allows both users and operators to diversify staking risks, optimize performance, and promote decentralization across the Ethereum consensus layer.",
+  "shortDescription": "SSV for Ethereum mainnet",
+  "description": "The SSV Network is a decentralized, open-source Ethereum staking network that enhances validator key security and network redundancy using Distributed Validator Technology (DVT)",
   "type": "service",
   "author": "DAppNode Association <admin@dappnode.io> (https://github.com/dappnode)",
   "contributors": [
